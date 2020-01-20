@@ -23,8 +23,9 @@
             <div class="form">
                 <form action="#" method="post"> 
                     <h4>Cadastrar Usuário</h4><br>
-                    <input type="text" name="nome" placeholder="seuemail@gmail.com" /> <br>
-                    <input type="email" name="email" placeholder="Sua melhor senha"/> <br>
+                    <input type="text" name="nome" placeholder="Seu nome" /> <br>
+                    <input type="email" name="email" placeholder="Seu e-mail"/> <br>
+                    <input type="password" name="senha" placeholder="Sua melhor senha"/> <br>
                     <button class="button-primary button-lg">Adicionar Usuário</button> <br>
                     <button class="button-danger button-lg"><a href="../index.php">Voltar para o painel</a></button>
                 </form>

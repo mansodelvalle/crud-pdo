@@ -138,6 +138,17 @@ input[type="email"]
     border:none;
     margin-top:-10px;
 }
+input[type="password"]
+{
+    font-family: 'Poppins', sans-serif;
+    max-width: 300px;
+    width:300px;
+    padding:20px;
+    text-align: center;
+    border-radius:5px;
+    border:none;
+    margin-top:-10px;
+}
 .button-lg
 {
     font-family: 'Poppins', sans-serif;

@@ -11,10 +11,10 @@ class Database
     public function conectar() {
         try {
             // Conexao com banco MySQL
-            $host = "localhost";
-            $name = "curso";
-            $user = "root";
-            $pass = "";
+            $host = "mysql669.umbler.com:41890";
+            $name = "teatrofacil";
+            $user = "teatrofacil";
+            $pass = "marcosdelvalle";
             $this->conn = new PDO("mysql:host={$host};dbname={$name}", $user, $pass);
     
             // Define para que o PDO lance exceções na ocorrência de erros
