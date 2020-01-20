@@ -38,14 +38,16 @@ class Usuarios extends Database
        if($sql->rowCount() > 0){
             foreach($sql->fetchAll(PDO::FETCH_OBJ) as $row){
             echo '<tr>';
-            echo    '<td>'.$row->id.'</td>';
             echo    '<td>'.$row->nome.'</td>';
             echo    '<td>'.$row->email.'</td>';
             echo    '<td>'.$row->senha.'</td>';
-            echo    "<td><a href='deletar.php?id=".$row->id."'>Deletar</a></td>";
-            echo    "<td><a href='editar.php?id=".$row->id."'>Editar</a></td>";
+            echo    "<td><a class='button-danger' href='pages/deletar.php?id=".$row->id."'>Deletar</a></td>";
+            echo    "<td><a class='button-default' href='pages/editar.php?id=".$row->id."'>Editar</a></td>";
             echo '</tr>';
             }
+       }else
+       {
+           header("Location: pages/adicionar.php");
        }
     }
 
@@ -75,7 +77,7 @@ class Usuarios extends Database
         $sql->bindValue(":email", $email);
         $sql->execute();
         //$sql->execute(array($nome, $email));
-        header("Location: index.php");
+        header("Location: ../index.php");
     
     }
 
@@ -84,7 +86,7 @@ class Usuarios extends Database
         $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
         $sql = $this->conn->prepare($sql);
         $sql->execute(array($nome, $email, md5($senha)));
-        header("Location: index.php");
+        header("Location: ../index.php");
     }
 
     public function deletarUsuario($id)
@@ -92,6 +94,7 @@ class Usuarios extends Database
         $sql = "DELETE FROM usuarios WHERE id = ?";
         $sql = $this->conn->prepare($sql);
         $sql->execute(array($id));
-        header("Location: index.php");
+        header("Location: ../index.php");
     }
+
 }

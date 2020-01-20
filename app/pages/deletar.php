@@ -1,7 +1,7 @@
 <?php
 
-require 'class/Database.class.php';
-require 'class/Usuarios.class.php';
+require '../class/Database.class.php';
+require '../class/Usuarios.class.php';
 $database = new Database;
 $usuarios = new Usuarios;
 
